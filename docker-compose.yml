@@ -1,0 +1,5 @@
+# Milestone 0: project foundation only.
+# Application services (API, workers, data stores) will be added in later milestones.
+# This file remains valid Compose syntax so `docker compose config` succeeds.
+
+services: {}
