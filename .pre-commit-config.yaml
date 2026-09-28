@@ -16,10 +16,12 @@ repos:
         args: [--fix]
       - id: ruff-format
 
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.15.0
+  # Run mypy via the project environment so runtime deps (e.g. pydantic) resolve.
+  - repo: local
     hooks:
       - id: mypy
-        additional_dependencies: []
-        args: [--config-file=pyproject.toml]
+        name: mypy
+        entry: uv run mypy
+        language: system
         pass_filenames: false
+        types: [python]
